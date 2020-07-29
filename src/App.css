@@ -2,6 +2,12 @@
   text-align: left;
 }
 
+.main-section {
+  margin-top: 10px;
+  display: flex;
+  align-items: space-evenly;
+}
+
 .App-main-header {
   display: flex;
   justify-content: space-evenly;
@@ -60,4 +66,9 @@ tr {
 
 .card {
   width: 18rem;
+}
+
+.card-img-top {
+  max-width: 100%;
+  height: 160px;
 }
