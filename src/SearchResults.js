@@ -1,6 +1,6 @@
 import React from "react";
 
-const SearchResult = () => {
+const SearchResult = props => {
   return (
     <div className="results">
       <table class="table">
@@ -17,36 +17,20 @@ const SearchResult = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Ms</td>
-            <td>Apple</td>
-            <td>Pie</td>
-            <td>@mdo</td>
-            <td>45632</td>
-            <td>01/01/2020</td>
-            <td>05/01/2020</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Ms</td>
-            <td>Strawberry</td>
-            <td>Cheescake</td>
-            <td>@mdo</td>
-            <td>45632</td>
-            <td>01/01/2020</td>
-            <td>05/01/2020</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Mr</td>
-            <td>Raspberry</td>
-            <td>Trifle</td>
-            <td>@mdo</td>
-            <td>45632</td>
-            <td>01/01/2020</td>
-            <td>05/01/2020</td>
-          </tr>
+          {props.results.map((info, index) => {
+            return (
+              <tr>
+                <th scope="row">{info.id}</th>
+                <td>{info.title}</td>
+                <td>{info.firstName}</td>
+                <td>{info.surname}</td>
+                <td>{info.email}</td>
+                <td>{info.roomId}</td>
+                <td>{info.checkInDate}</td>
+                <td>{info.checkOutDate}</td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div>

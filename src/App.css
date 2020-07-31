@@ -66,6 +66,10 @@ tr {
   font-size: x-small;
 }
 
+.footer-list {
+  list-style: none;
+}
+
 .card {
   width: 18rem;
 }
