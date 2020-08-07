@@ -35,8 +35,8 @@
 }
 
 .App-content {
-  padding-top: 20px;
-  font-size: large;
+  padding-top: 20px 15px;
+  font-size: medium;
 }
 
 @keyframes App-logo-spin {
