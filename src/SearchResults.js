@@ -1,7 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 const SearchResult = props => {
+  const [highlightedRows, setHighlightedRows] = useState([]);
+
+  function clickOnTableRow(event) {
+    const bookingId = Number(event.currentTarget.id);
+    console.log(bookingId);
+
+    if (highlightedRows.includes(bookingId)) {
+      //exclude bookingId from highlightedRows
+      setHighlightedRows(highlightedRows.filter(id => id !== bookingId));
+    } else {
+      //include bookingId to highlightedRows
+      setHighlightedRows(highlightedRows.concat(bookingId));
+    }
+  }
+
   return (
     <div className="results">
       <table className="table">
@@ -21,7 +36,14 @@ const SearchResult = props => {
         <tbody>
           {props.results.map((info, index) => {
             return (
-              <tr key={index}>
+              <tr
+                id={info.id}
+                className={
+                  highlightedRows.includes(info.id) ? "table-active" : " "
+                }
+                onClick={clickOnTableRow}
+                key={index}
+              >
                 <th scope="row">{info.id}</th>
                 <td>{info.title}</td>
                 <td>{info.firstName}</td>

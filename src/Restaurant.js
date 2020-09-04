@@ -1,7 +1,7 @@
 import React from "react";
 import Order from "./Order";
 
-const Restaurant = props => {
+const Restaurant = () => {
   return (
     <div className="App-content">
       <h3>Restaurant Orders</h3>
